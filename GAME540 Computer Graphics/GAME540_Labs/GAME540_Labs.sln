@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-Lab-2", "GAME540-Lab-2\GAME540-Lab-2.vcxproj", "{1938E1E2-4E9E-48D2-A199-2FE8D3641B5D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-Lab-1_Draw-a-square-OPENGL", "..\..\..\..\Documents\Visual Studio 2012\Projects\CPP\CppTestProject\CppTestProject\CppTestProject.vcxproj", "{1853B36C-EBE5-4647-92D7-7B85A3004052}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-Lab-1_Draw-square-OPENGL", "GAME540-Lab-1_Draw-square-OPENGL\GAME540-Lab-1_Draw-square-OPENGL.vcxproj", "{B8E41EA5-F46A-4BBD-9220-10C413B05295}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,10 @@ Global
 		{1938E1E2-4E9E-48D2-A199-2FE8D3641B5D}.Debug|Win32.Build.0 = Debug|Win32
 		{1938E1E2-4E9E-48D2-A199-2FE8D3641B5D}.Release|Win32.ActiveCfg = Release|Win32
 		{1938E1E2-4E9E-48D2-A199-2FE8D3641B5D}.Release|Win32.Build.0 = Release|Win32
-		{1853B36C-EBE5-4647-92D7-7B85A3004052}.Debug|Win32.ActiveCfg = Debug|Win32
-		{1853B36C-EBE5-4647-92D7-7B85A3004052}.Debug|Win32.Build.0 = Debug|Win32
-		{1853B36C-EBE5-4647-92D7-7B85A3004052}.Release|Win32.ActiveCfg = Release|Win32
-		{1853B36C-EBE5-4647-92D7-7B85A3004052}.Release|Win32.Build.0 = Release|Win32
+		{B8E41EA5-F46A-4BBD-9220-10C413B05295}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B8E41EA5-F46A-4BBD-9220-10C413B05295}.Debug|Win32.Build.0 = Debug|Win32
+		{B8E41EA5-F46A-4BBD-9220-10C413B05295}.Release|Win32.ActiveCfg = Release|Win32
+		{B8E41EA5-F46A-4BBD-9220-10C413B05295}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

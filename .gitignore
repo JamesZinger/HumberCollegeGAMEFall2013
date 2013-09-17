@@ -12,3 +12,4 @@
 *.la
 *.a
 Debug
+/GAME540 Computer Graphics/GAME540_Labs/*.opensdf

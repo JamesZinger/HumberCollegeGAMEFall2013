@@ -14,6 +14,7 @@
     <ProjectGuid>{1938E1E2-4E9E-48D2-A199-2FE8D3641B5D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>GAME540Lab2</RootNamespace>
+    <ProjectName>GAME540-Lab-2_Rotate-tri-OPENGL</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

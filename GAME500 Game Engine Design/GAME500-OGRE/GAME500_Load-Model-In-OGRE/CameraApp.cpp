@@ -18,8 +18,8 @@ void CameraApp::createScene()
 		camNode = sceneMgr->getRootSceneNode()->createChildSceneNode( "CameraNode" );
 		camNode->attachObject(camera);
 
-		//Ogre::Entity *sinbadEntity = sceneMgr->createEntity("Sinbad", "penguin.mesh");
-		//camNode->attachObject(sinbadEntity);
+		Ogre::Entity *sinbadEntity = sceneMgr->createEntity("Sinbad", "penguin.mesh");
+		camNode->attachObject(sinbadEntity);
 		camera->setPosition(0.0, 40.0, -100.0);
 		camNode->translate(0.0, 10.0, 0.0);
 		Ogre::Viewport *vp = window->addViewport(camera);
@@ -30,13 +30,13 @@ void CameraApp::createScene()
 		camera->lookAt(0, 0, 0);
 		setActiveCamera(camera);
 
-		//Ogre::Plane plane(Ogre::Vector3::UNIT_Y, -10);
-		//Ogre::MeshManager::getSingleton().createPlane("plane",
-		//	ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, plane,
-		//	1500, 1500, 20, 20, true, 1, 5, 5, Ogre::Vector3::UNIT_Z);
-		//Ogre::Entity *planeEntity = sceneMgr->createEntity("PlaneEntity", "plane");
-		//sceneMgr->getRootSceneNode()->createChildSceneNode()->attachObject(planeEntity);
-		//planeEntity->setMaterialName("Examples/BeachStones");
+		Ogre::Plane plane(Ogre::Vector3::UNIT_Y, -10);
+		Ogre::MeshManager::getSingleton().createPlane("plane",
+			ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, plane,
+			1500, 1500, 20, 20, true, 1, 5, 5, Ogre::Vector3::UNIT_Z);
+		Ogre::Entity *planeEntity = sceneMgr->createEntity("PlaneEntity", "plane");
+		sceneMgr->getRootSceneNode()->createChildSceneNode()->attachObject(planeEntity);
+		planeEntity->setMaterialName("Examples/BeachStones");
 
 		
 	

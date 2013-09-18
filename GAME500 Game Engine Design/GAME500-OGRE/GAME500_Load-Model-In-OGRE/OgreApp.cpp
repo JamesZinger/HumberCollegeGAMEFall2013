@@ -3,7 +3,7 @@
 OgreApp* OgreApp::theRunningApp = NULL;
 
 
-int OgreApp::initializeRoot()
+int OgreApp::initializeRoot()                                                                                                                                                                                                
 {
 	root = new Ogre::Root();
 

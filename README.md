@@ -1,2 +1,2 @@
-flaming-octo-ironman
+James Zinger Humber College GitHub Repo
 ====================

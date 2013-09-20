@@ -25,3 +25,5 @@ x64/
 build/
 [Bb]in/
 [Oo]bj/
+/GAME500 Game Engine Design/GAME500-OGRE/*.suo
+/GAME500 Game Engine Design/GAME500-OGRE/*.sdf

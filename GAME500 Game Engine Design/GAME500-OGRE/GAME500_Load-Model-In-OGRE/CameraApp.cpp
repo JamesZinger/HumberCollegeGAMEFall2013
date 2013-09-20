@@ -1,6 +1,6 @@
 #include "CameraApp.h"
 #include "BaseFrameListener.h"
-
+#include "OgreMath.h"
 void CameraApp::createScene()
 {
 	/***************************************************************************/
@@ -21,10 +21,9 @@ void CameraApp::createScene()
 		Ogre::Entity *sinbadEntity = sceneMgr->createEntity("Sinbad", "zombie.mesh");
 		camNode->attachObject(sinbadEntity);
 		sinbadEntity->getParentNode()->setScale(30,30,30);
-		//sinbadEntity->getParentNode()->roll(Radian(3.14/2));
-		sinbadEntity->getParentSceneNode()->pitch(Radian(3.14/2));
-		camera->setPosition(0.0, 40.0, -100.0);
-		camNode->translate(0.0, 10.0, 0.0);
+		sinbadEntity->getParentNode()->pitch(Radian(Math().PI/2));
+		camera->setPosition(-100.0, 0.0, -100.0);
+		camNode->translate(0.0, 30.0, 0.0);
 		Ogre::Viewport *vp = window->addViewport(camera);
 		vp->setDimensions(0.0f, 0.0f, 1.0f, 1.0f);
 		camera->setAspectRatio((float)vp->getActualWidth() / (float) vp->getActualHeight());

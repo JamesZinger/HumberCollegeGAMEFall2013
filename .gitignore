@@ -17,7 +17,6 @@
 *.opensdf
 *.pdb
 *.ilk
-*.obj
 */Debug/*.log
 */Debug/*.obj
 [Dd]ebug/

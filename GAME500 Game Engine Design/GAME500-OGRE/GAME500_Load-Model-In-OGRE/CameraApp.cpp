@@ -18,12 +18,12 @@ void CameraApp::createScene()
 		camNode = sceneMgr->getRootSceneNode()->createChildSceneNode( "CameraNode" );
 		camNode->attachObject(camera);
 
-		Ogre::Entity *sinbadEntity = sceneMgr->createEntity("Sinbad", "zombie.mesh");
+		Ogre::Entity *sinbadEntity = sceneMgr->createEntity("Sinbad", "Sinbad.mesh");
 		camNode->attachObject(sinbadEntity);
-		sinbadEntity->getParentNode()->setScale(30,30,30);
-		sinbadEntity->getParentNode()->pitch(Radian(Math().PI/2));
-		camera->setPosition(-100.0, 0.0, -100.0);
-		camNode->translate(0.0, 30.0, 0.0);
+		sinbadEntity->getParentNode()->setScale(1,1,1);
+		//sinbadEntity->getParentNode()->pitch(Radian(Math().PI/2));
+		camera->setPosition(0.0, 10.0, 10);
+		camNode->translate(0.0, 0.0, 0.0);
 		Ogre::Viewport *vp = window->addViewport(camera);
 		vp->setDimensions(0.0f, 0.0f, 1.0f, 1.0f);
 		camera->setAspectRatio((float)vp->getActualWidth() / (float) vp->getActualHeight());

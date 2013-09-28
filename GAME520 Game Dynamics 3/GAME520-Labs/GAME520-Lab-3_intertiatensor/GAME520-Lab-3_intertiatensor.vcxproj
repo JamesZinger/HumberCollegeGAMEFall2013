@@ -83,10 +83,17 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SolidCuboid.cpp" />
     <ClCompile Include="SolidCylinder.cpp" />
+    <ClCompile Include="Starship.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SimpleShape.h" />
     <ClInclude Include="SolidCuboid.h" />
     <ClInclude Include="SolidCylinder.h" />
+    <ClInclude Include="Starship.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GAME520-Lab-3_intertiatensor.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

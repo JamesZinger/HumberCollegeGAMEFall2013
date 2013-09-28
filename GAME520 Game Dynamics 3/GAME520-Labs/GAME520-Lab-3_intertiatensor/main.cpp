@@ -12,11 +12,11 @@ subject to the following restrictions:
 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
 3. This notice may not be removed or altered from any source distribution.
 */
+#pragma once
 #include "btBulletDynamicsCommon.h"
 #include "BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.h"
 #include "LinearMath/btHashMap.h"
-#include "SolidCuboid.h"
-#include "SolidCylinder.h"
+#include "Starship.h"
 #include <string>
 #include <iostream>
 
@@ -42,14 +42,15 @@ const double pi = 3.1415926535897;
 
 int main(int argc,char** argv)
 {
-	SolidCylinder Bridge = SolidCylinder(150, 50, 300000, new btVector3(0, 50, -300));
-	SolidCuboid EngineRoom = SolidCuboid(150, 50, 100, 400000, new btVector3(0,0,0));
-	SolidCuboid WarpDrive1 = SolidCuboid(250, 50, 50, 150000, new btVector3(150, 75, 100));
-	SolidCuboid WarpDrive2 = SolidCuboid(250, 50, 50, 150000, new btVector3(-150, 75,100));
-	
-	btMatrix3x3* total = &(*(Bridge.mInertiaTensor) + *(EngineRoom.mInertiaTensor) + *(WarpDrive1.mInertiaTensor) + *(WarpDrive2.mInertiaTensor));
+	SolidCylinder *Bridge = new SolidCylinder(150, 50, 300000, new btVector3(0, 50, -300));
+	SolidCuboid *EngineRoom = new SolidCuboid(150, 50, 100, 400000, new btVector3(0, 0, 0));
+	SolidCuboid *WarpDrive1 = new SolidCuboid(250, 50, 50, 150000, new btVector3(150, 75, 100));
+	SolidCuboid *WarpDrive2 = new SolidCuboid(250, 50, 50, 150000, new btVector3(-150, 75, 100));
+	Starship* Enterprise = new Starship(Bridge, EngineRoom, WarpDrive1, WarpDrive2); 
 
-	cout << "Star Ship local inertia matrix\n";
+	btMatrix3x3* total = Enterprise->CalculateInertiaTensor();
+
+	cout << "\nStar Ship local inertia matrix\n";
 	MatrixPrint(total);
 
 	btMatrix3x3* totalinv = &(total->inverse());
@@ -82,15 +83,13 @@ int main(int argc,char** argv)
 
 	MatrixPrint(OrientationMatrix);
 
-	btMatrix3x3* worldInertia = &(*total * *OrientationMatrix);
+	btMatrix3x3* worldInertia = &( (*OrientationMatrix * *total) * (OrientationMatrix)->transpose());
 
 	cout << "\nWorld Inertia Tensor\n";
 	MatrixPrint(worldInertia);
 
-	btMatrix3x3* worldInertiaInv = &(*totalinv * *OrientationMatrix);
-
 	cout << "\nWorld Inertia Tensor Inverse\n";
-	MatrixPrint(worldInertiaInv);
+	MatrixPrint(&(worldInertia->inverse()));
 
 	string s = string();
 	cin >> s;

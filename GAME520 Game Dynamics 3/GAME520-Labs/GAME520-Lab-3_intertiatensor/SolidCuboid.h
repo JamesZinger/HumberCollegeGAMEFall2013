@@ -1,17 +1,16 @@
 #pragma once
-#include "btBulletDynamicsCommon.h"
+#include "SimpleShape.h"
 
-class SolidCuboid
+class SolidCuboid : public SimpleShape
 {
 public:
 	float mWidth;
 	float mHeight;
-	float mDepth;
-	float mMass;
-	btVector3* mCenterOfMassOffest;
-	btMatrix3x3* mInertiaTensor;
+	float mLength;
 
 	SolidCuboid(float Width, float Height, float Depth, float Mass, btVector3* CoMOffset);
 	~SolidCuboid(void);
+
+	virtual btMatrix3x3* CalculateLocalInertia();
 };
 

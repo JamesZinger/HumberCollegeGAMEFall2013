@@ -1,32 +1,40 @@
 #include "SolidCuboid.h"
-
-
-SolidCuboid::SolidCuboid(float Width, float Height, float Depth, float Mass, btVector3* CoMOffset)
+#include <iostream>
+using namespace std;
+SolidCuboid::SolidCuboid(float Width, float Height, float Length, float Mass, btVector3* comOffset)
 {
 	mWidth = Width;
 	mHeight = Height;
-	mDepth  = Depth;
+	mLength  = Length;
 	mMass = Mass;
-	float xx = (1/12) * mMass * ((mHeight * mHeight) + (mDepth * mDepth));
-	float yy = (1/12) * mMass * ((mWidth * mWidth) + (mDepth * mDepth));
-	float zz = (1/12) * mMass * ((mWidth * mWidth) + (mHeight * mHeight));
+	CoMOffset = comOffset;
 	
-	float dx = CoMOffset->getX();
-	float dy = CoMOffset->getY();
-	float dz = CoMOffset->getZ();
-
-	float Ixx = xx + (mMass * ((dy * dy) + (dz * dz)));
-	float Iyy = yy + (mMass * ((dx * dx) + (dz * dz)));
-	float Izz = zz + (mMass * ((dx * dx) + (dy * dy)));
-	float Ixy = 0;
-	float Ixz = 0;
-	float Iyz = 0;
-
-	mInertiaTensor = new btMatrix3x3(Ixx, -Ixy, -Ixz, -Ixy, Iyy, -Iyz, -Ixz, -Iyz, Izz);
 }
 
 
 SolidCuboid::~SolidCuboid(void)
 {
-	delete mInertiaTensor;
 }
+
+btMatrix3x3* SolidCuboid::CalculateLocalInertia()
+{
+	btMatrix3x3* returnmat = new btMatrix3x3();
+	returnmat->setIdentity();
+
+	float xx = (0.08333333333333333333333333333333) * mMass * ((mHeight * mHeight) + (mLength * mLength));
+	float yy = (0.08333333333333333333333333333333) * mMass * ((mWidth * mWidth) + (mLength * mLength));
+	float zz = (0.08333333333333333333333333333333) * mMass * ((mWidth * mWidth) + (mHeight * mHeight));
+
+	cout << "Mass: " << mMass << '\n';
+	cout << "Height: " << mHeight << '\n';
+	cout << "Width: " << mWidth << '\n';
+	cout << "Length: " << mLength << '\n';
+	cout << "xx: " << xx << '\n';
+	cout << "yy: " << yy << '\n';
+	cout << "zz: " << zz << '\n';
+
+	returnmat->setValue(xx, 00, 00, 00, yy, 00, 00, 00, zz);
+
+	return returnmat;
+}
+

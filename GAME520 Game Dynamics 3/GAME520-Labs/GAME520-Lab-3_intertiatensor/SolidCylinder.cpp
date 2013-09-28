@@ -3,36 +3,30 @@
 #include <iostream>
 using namespace std;
 
-SolidCylinder::SolidCylinder(float Radius, float Height, float Mass, btVector3* CoMOffset)
+SolidCylinder::SolidCylinder(float Radius, float Height, float Mass, btVector3* comOffset)
 {
 	mRadius = Radius;
 	mHeight = Height;
 	mMass = Mass;
-	mCenterOfMassOffest = CoMOffset;
-	
-	float xx = (mMass * ((3 * mRadius * mRadius) + (mHeight * mHeight))/12);
-	float yy = xx;
-	float zz = 0.5f * mMass * mRadius * mRadius;
-	float xy = 0;
-	float xz = 0;
-	float yz = 0;
-
-	float dx = CoMOffset->getX();
-	float dy = CoMOffset->getY();
-	float dz = CoMOffset->getZ();
-
-	float Ixx = xx + (mMass * ((dy * dy) + (dz * dz)));
-	float Iyy = yy + (mMass * ((dx * dx) + (dz * dz)));
-	float Izz = zz + (mMass * ((dx * dx) + (dy * dy)));
-	float Ixy = 0;
-	float Ixz = 0;
-	float Iyz = 0;
-
-	mInertiaTensor = new btMatrix3x3(Ixx, -Ixy, -Ixz, -Ixy, Iyy, -Iyz, -Ixz, -Iyz, Izz);
+	CoMOffset = comOffset;
 }
 
 
 SolidCylinder::~SolidCylinder(void)
 {
-	delete mInertiaTensor;
+}
+
+btMatrix3x3* SolidCylinder::CalculateLocalInertia()
+{
+	btMatrix3x3* returnmat = new btMatrix3x3();
+	returnmat->setIdentity();
+
+	float xx = (mMass * ((3 * mRadius * mRadius) + (mHeight * mHeight))/12);
+	float zz = xx;
+	float yy = 0.5f * mMass * mRadius * mRadius;
+
+
+	returnmat->setValue(xx, 00, 00, 00, yy, 00, 00, 00, zz);
+
+	return returnmat;
 }

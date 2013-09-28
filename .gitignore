@@ -17,6 +17,7 @@
 *.opensdf
 *.pdb
 *.ilk
+*.sdf
 */Debug/*.log
 */Debug/*.obj
 [Dd]ebug/
@@ -25,8 +26,6 @@ x64/
 build/
 [Bb]in/
 [Oo]bj/
-/GAME500 Game Engine Design/GAME500-OGRE/*.suo
-/GAME500 Game Engine Design/GAME500-OGRE/*.sdf
 /GAME540 Computer Graphics/GAME540_Labs/GAME540-Lab-3_Multi-Object/stdafx.cpp
 
 /GAME540 Computer Graphics/GAME540_Labs/GAME540-Lab-3_Multi-Object/stdafx.h

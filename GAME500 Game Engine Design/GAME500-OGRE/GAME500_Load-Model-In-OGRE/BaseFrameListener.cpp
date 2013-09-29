@@ -38,12 +38,12 @@ void BaseFrameListener::processKeyboardInput(const FrameEvent &evt)
 
 	if (app->getKeyboard()->isKeyDown(OIS::KC_PGUP))
 	{
-		moveVect.z = -dist;
+		moveVect.y = -dist;
 		moving = true;
 	}
 	else if (app->getKeyboard()->isKeyDown(OIS::KC_PGDOWN))
 	{
-		moveVect.z = dist;
+		moveVect.y = dist;
 		moving = true;
 	}
 	else if (app->getKeyboard()->isKeyDown(OIS::KC_LEFT))
@@ -58,12 +58,12 @@ void BaseFrameListener::processKeyboardInput(const FrameEvent &evt)
 	}
 	else if (app->getKeyboard()->isKeyDown(OIS::KC_DOWN))
 	{
-		moveVect.y = -dist;
+		moveVect.z = -dist;
 		moving = true;
 	}
 	else if (app->getKeyboard()->isKeyDown(OIS::KC_UP))
 	{
-		moveVect.y = dist;
+		moveVect.z = dist;
 		moving = true;
 	}
 	else if (app->getKeyboard()->isKeyDown(OIS::KC_L))

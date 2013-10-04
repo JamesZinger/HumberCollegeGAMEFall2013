@@ -1,7 +1,7 @@
 #ifndef BASE_FRAME_LISTENER_H
 #define BASE_FRAME_LISTENER_H
 
-#include "OgreFrameListener.h"
+#include <OGRE/OgreFrameListener.h>
 #include "CameraApp.h"
 
 #include <OIS\OIS.h>

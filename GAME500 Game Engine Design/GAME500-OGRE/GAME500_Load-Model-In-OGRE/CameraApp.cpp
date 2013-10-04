@@ -1,6 +1,6 @@
 #include "CameraApp.h"
 #include "BaseFrameListener.h"
-#include "OgreMath.h"
+#include <OGRE\OgreMath.h>
 void CameraApp::createScene()
 {
 	/***************************************************************************/

@@ -1,8 +1,8 @@
 #ifndef OGRE_APP_H
 #define OGRE_APP_H
 
-#include <Ogre.h>
-#include <OgreFrameListener.h>
+#include <OGRE\Ogre.h>
+#include <OGRE\OgreFrameListener.h>
 #include <OIS\OIS.h>
 
 #define OGRE_APP OgreApp::getInstance()

@@ -11,6 +11,7 @@ public:
 	CameraApp(Ogre::FrameListener *listener, bool useOIS)
 		:OgreApp(listener, useOIS), camNode(NULL)
 	{
+		
 	}
 
 	virtual void createScene();

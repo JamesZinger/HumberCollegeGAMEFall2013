@@ -170,6 +170,7 @@ void OgreApp::constructObject()
 	if(frameListener) root->addFrameListener(frameListener);
 	//Ogre::LogManager::getSingletonPtr()->logMessage("+++ frameListener registered");
 	
+	
 }
 
 OgreApp::OgreApp(Ogre::FrameListener *listener, bool useOIS)

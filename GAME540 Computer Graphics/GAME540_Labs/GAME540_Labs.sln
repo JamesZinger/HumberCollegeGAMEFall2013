@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-Lab-1_Draw-square-O
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-Lab-3_Multi-Object", "GAME540-Lab-3_Multi-Object\GAME540-Lab-3_Multi-Object.vcxproj", "{A67B7169-C343-4672-A24A-5E2084BC9C4D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-Lab5_Lighting", "GAME540-Lab5_Lighting\GAME540-Lab5_Lighting.vcxproj", "{AFB57DE1-8BC8-46E2-B429-C90FBFDE9C82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -25,6 +27,10 @@ Global
 		{A67B7169-C343-4672-A24A-5E2084BC9C4D}.Debug|Win32.Build.0 = Debug|Win32
 		{A67B7169-C343-4672-A24A-5E2084BC9C4D}.Release|Win32.ActiveCfg = Release|Win32
 		{A67B7169-C343-4672-A24A-5E2084BC9C4D}.Release|Win32.Build.0 = Release|Win32
+		{AFB57DE1-8BC8-46E2-B429-C90FBFDE9C82}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AFB57DE1-8BC8-46E2-B429-C90FBFDE9C82}.Debug|Win32.Build.0 = Debug|Win32
+		{AFB57DE1-8BC8-46E2-B429-C90FBFDE9C82}.Release|Win32.ActiveCfg = Release|Win32
+		{AFB57DE1-8BC8-46E2-B429-C90FBFDE9C82}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,7 +8,7 @@ public:
 	float mHeight;
 	float mLength;
 
-	SolidCuboid(float Width, float Height, float Depth, float Mass, btVector3* CoMOffset);
+	SolidCuboid(float Width, float Height, float Length, float Mass, btVector3* CoMOffset, std::string name);
 	~SolidCuboid(void);
 
 	virtual btMatrix3x3* CalculateLocalInertia();

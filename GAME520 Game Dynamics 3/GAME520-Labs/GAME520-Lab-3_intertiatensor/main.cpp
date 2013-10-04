@@ -42,10 +42,10 @@ const double pi = 3.1415926535897;
 
 int main(int argc,char** argv)
 {
-	SolidCylinder *Bridge = new SolidCylinder(150, 50, 300000, new btVector3(0, 50, -300));
-	SolidCuboid *EngineRoom = new SolidCuboid(150, 50, 100, 400000, new btVector3(0, 0, 0));
-	SolidCuboid *WarpDrive1 = new SolidCuboid(250, 50, 50, 150000, new btVector3(150, 75, 100));
-	SolidCuboid *WarpDrive2 = new SolidCuboid(250, 50, 50, 150000, new btVector3(-150, 75, 100));
+	SolidCylinder *Bridge = new SolidCylinder(150, 50, 300000, new btVector3(0, 50, -300), "Bridge");
+	SolidCuboid *EngineRoom = new SolidCuboid(50, 100, 150, 400000, new btVector3(0, 0, 0), "Engine");
+	SolidCuboid *WarpDrive1 = new SolidCuboid(50, 50, 250, 150000, new btVector3(150, 75, 100), "Warp Drive 1");
+	SolidCuboid *WarpDrive2 = new SolidCuboid(50, 50, 250, 150000, new btVector3(-150, 75, 100), "Warp Drive 2");
 	Starship* Enterprise = new Starship(Bridge, EngineRoom, WarpDrive1, WarpDrive2); 
 
 	btMatrix3x3* total = Enterprise->CalculateInertiaTensor();
@@ -95,6 +95,5 @@ int main(int argc,char** argv)
 	cin >> s;
 
 
-	//default glut doesn't return from mainloop
 	return 0;
 }

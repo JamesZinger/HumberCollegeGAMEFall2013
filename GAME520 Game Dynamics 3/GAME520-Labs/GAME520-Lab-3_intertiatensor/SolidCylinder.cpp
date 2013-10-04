@@ -3,12 +3,13 @@
 #include <iostream>
 using namespace std;
 
-SolidCylinder::SolidCylinder(float Radius, float Height, float Mass, btVector3* comOffset)
+SolidCylinder::SolidCylinder(float Radius, float Height, float Mass, btVector3* comOffset, std::string name)
 {
 	mRadius = Radius;
 	mHeight = Height;
 	mMass = Mass;
 	CoMOffset = comOffset;
+	mName = name;
 }
 
 

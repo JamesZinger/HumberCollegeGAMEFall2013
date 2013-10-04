@@ -37,31 +37,57 @@ btMatrix3x3* Starship::CalculateInertiaTensor()
 	btMatrix3x3* inertiaTensor = new btMatrix3x3();
 	inertiaTensor->setIdentity();
 
+	//Assign Shapes to a Array
 	SimpleShape* Shapes [4] = {Bridge, EngineRoom, WarpDrive1, WarpDrive2};
+
+	btVector3 CenterOfMass = btVector3(0,0,0);
+	float totalMass = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		totalMass += Shapes[i]->mMass;
+		CenterOfMass += *(Shapes[i]->CoMOffset) * (Shapes[i]->mMass);
+	}
+
+	CenterOfMass /= totalMass;
+
+	std::cout << "Center of Mass- x: " << CenterOfMass.getX() << ", y: " << CenterOfMass.getY() << ", z: " << CenterOfMass.getZ() << '\n';
 
 	for (int i = 0; i < 4; i++)
 	{
-		float dx = Shapes[i]->CoMOffset->getX();
-		float dy = Shapes[i]->CoMOffset->getY();
-		float dz = Shapes[i]->CoMOffset->getZ();
-		btMatrix3x3* shapeInertiaTensor = (Shapes[i]->CalculateLocalInertia());
+		btVector3 CenterofMassDiff = *(Shapes[i]->CoMOffset) - CenterOfMass;
+		float dx = CenterofMassDiff.getX();
+		float dy = CenterofMassDiff.getY();
+		float dz = CenterofMassDiff.getZ();
+
+		std::cout << Shapes[i]->mName << " CoM Diff  x: " << dx << " y: " << dy << " z: " << dz << '\n'; 
+
+		btMatrix3x3 compoundInertiaTensor;
+
+		btMatrix3x3 shapeInertiaTensor = *(Shapes[i]->CalculateLocalInertia());
 		
 		std::cout << '\n';
-		printMatrix(shapeInertiaTensor);
+		std::cout << Shapes[i]->mName <<  " LOCAL INERTIA MATRIX" << '\n';
+		printMatrix(&shapeInertiaTensor);
 		std::cout << '\n';
 
-		float Ixx = shapeInertiaTensor->getRow(0).getX() + (Shapes[i]->mMass * ((dy * dy) + (dz * dz)));
-		float Iyy = shapeInertiaTensor->getRow(1).getY() + (Shapes[i]->mMass * ((dx * dx) + (dz * dz)));
-		float Izz = shapeInertiaTensor->getRow(2).getZ() + (Shapes[i]->mMass * ((dx * dx) + (dy * dy)));
-		float Ixy = -shapeInertiaTensor->getRow(0).getY() + (Shapes[i]->mMass * dx * dy);
-		float Ixz = -shapeInertiaTensor->getRow(0).getZ() + (Shapes[i]->mMass * dx * dz);
-		float Iyz = -shapeInertiaTensor->getRow(1).getZ() + (Shapes[i]->mMass * dz * dy);
+		float Ixx = shapeInertiaTensor.getRow(0).getX() + (Shapes[i]->mMass * ((dy * dy) + (dz * dz)));
+		float Iyy = shapeInertiaTensor.getRow(1).getY() + (Shapes[i]->mMass * ((dx * dx) + (dz * dz)));
+		float Izz = shapeInertiaTensor.getRow(2).getZ() + (Shapes[i]->mMass * ((dx * dx) + (dy * dy)));
+		float Ixy = shapeInertiaTensor.getRow(0).getY() + (Shapes[i]->mMass * dx * dy);
+		float Ixz = shapeInertiaTensor.getRow(0).getZ() + (Shapes[i]->mMass * dx * dz);
+		float Iyz = shapeInertiaTensor.getRow(1).getZ() + (Shapes[i]->mMass * dz * dy);
 
 		
-		*inertiaTensor = btMatrix3x3(
-							 Ixx, 00, 0,
-							 0,  Iyy, 0,
-							0, 0,  Izz);
+		
+		compoundInertiaTensor = btMatrix3x3(
+							  Ixx, -Ixy, -Ixz,
+							 -Ixy,  Iyy, -Iyz,
+							 -Ixz, -Iyz,  Izz);
+
+		std::cout << Shapes[i]->mName << " COMPOUND INERTIA MATRIX" << '\n';
+		printMatrix(&compoundInertiaTensor);
+
+		*inertiaTensor += compoundInertiaTensor;
 
 
 	}

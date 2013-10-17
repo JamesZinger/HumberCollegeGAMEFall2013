@@ -24,7 +24,7 @@ void CameraApp::createScene()
 
 		for (int i = 0; i < 4; i++)
 		{
-			Ogre::Entity *sinbadEntity = sceneMgr->createEntity("Sinbad" + i, "Sinbad.mesh");
+			Ogre::Entity *sinbadEntity = sceneMgr->createEntity("Sinbad" + i, "zombie.mesh");
 			Ogre::SceneNode *sinbadNode = sceneMgr->getRootSceneNode()->createChildSceneNode("SinbadNode" + i);
 			sinbadNode->attachObject(sinbadEntity);
 			sinbadNode->setScale(1,1,1);
@@ -44,10 +44,12 @@ void CameraApp::createScene()
 			}
 		}
 
-		Ogre::Entity *sinbadEntity = sceneMgr->createEntity("SinbadScaled", "Sinbad.mesh");
+		Ogre::Entity *sinbadEntity = sceneMgr->createEntity("SinbadScaled", "zombie.mesh");
 		Ogre::SceneNode *sinbadNode = sceneMgr->getRootSceneNode()->createChildSceneNode("SinbadScaledNode");
 		sinbadNode->attachObject(sinbadEntity);
 		sinbadNode->setScale(5,5,5);
+		sinbadNode->rotate(Ogre::Vector3(1,0,0), Ogre::Degree(90));
+		sinbadNode->rotate(Ogre::Vector3(0,0,1), Ogre::Degree(-90));
 		sinbadNode->translate(0, 0, -60);
 
 

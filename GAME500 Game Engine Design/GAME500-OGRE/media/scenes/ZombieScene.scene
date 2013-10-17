@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<scene formatVersion="1.0.0" generator="Ogitor SceneBuilder 0.4.4">
+    <resourceLocations />
+    <environment>
+        <scenemanager name="SceneManager" id="56215092" type="OctreeSceneManager" />
+        <colourAmbient r="0.5" g="0.5" b="0.5" a="1" />
+        <fog mode="none" start="0" end="1000" density="0">
+            <colour r="0.5" g="0.5" b="0.5" a="1" />
+        </fog>
+        <viewport name="Viewport1" id="2000000002" index="1">
+            <colour r="0" g="0" b="0" a="1" />
+        </viewport>
+        <camera name="intViewCamera1" viewMode="0" polyMode="3" fov="1">
+            <clipping near="1" far="3000" />
+            <position x="9.86016" y="34.1717" z="-36.2398" />
+            <rotation qw="-0.194369" qx="0.026453" qy="-0.971614" qz="-0.132234" />
+        </camera>
+    </environment>
+    <terrain worldSize="512" mapSize="129" pagenameprefix="Page" colourmapEnabled="false" colourMapTextureSize="128" tuningCompositeMapDistance="2000" tuningMaxPixelError="3" tuningMinBatchSize="33" tuningMaxBatchSize="65" tuningSkirtSize="10" tuningUseRayBoxDistancealculation="false">
+        <terrainPages>
+            <terrainPage name="Page_00000000.ogt" pageX="0" pageY="0" />
+        </terrainPages>
+    </terrain>
+    <nodes />
+</scene>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GridNode">
+      <UniqueIdentifier>{d73daeac-3ed4-40b3-b464-b1be25f14801}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SquareGrid">
+      <UniqueIdentifier>{91e0b7b3-a1f5-408e-b8c8-12844a693d06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MazeGenerator">
+      <UniqueIdentifier>{ec476805-aaaf-422e-bc5c-516adb45daac}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="GridNode.cpp">
+      <Filter>GridNode</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareGrid.cpp">
+      <Filter>SquareGrid</Filter>
+    </ClCompile>
+    <ClCompile Include="MazeGenerator.cpp">
+      <Filter>MazeGenerator</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GridNode.h">
+      <Filter>GridNode</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareGrid.h">
+      <Filter>SquareGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeGenerator.h">
+      <Filter>MazeGenerator</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

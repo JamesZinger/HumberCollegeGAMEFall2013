@@ -17,6 +17,7 @@ subject to the following restrictions:
 
 class btCollisionShape;
 class btShapeHull;
+
 #include "LinearMath/btAlignedObjectArray.h"
 #include "LinearMath/btVector3.h"
 

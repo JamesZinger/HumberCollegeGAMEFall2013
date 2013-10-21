@@ -10,7 +10,7 @@
     </RESOURCEDIRECTORIES>
   <CAMERASPEED value="1"></CAMERASPEED>
   <CAMERAPOSITIONS count="0">
-    <OPTION id="0" position="0 10 0" orientation="-0.079547 8.6728e-005 -0.996831 -0.00108759"></OPTION>
+    <OPTION id="0" position="0 10 14.7823" orientation="-0.96919 0.111498 0.218195 0.025102"></OPTION>
   </CAMERAPOSITIONS>
     <LAYERS>
       <LAYER id="0" name="Layer 0" visible="true"></LAYER>
@@ -57,7 +57,7 @@
   <VOLUMESELECTIONDEPTH value="0"></VOLUMESELECTIONDEPTH>
   <OBJECTCOUNT value="0"></OBJECTCOUNT>
   </PROJECT>
-  <OBJECT object_id="56215092" name="SceneManager" typename="OctreeSceneManager">
+  <OBJECT object_id="142338336" name="SceneManager" typename="OctreeSceneManager">
     <PROPERTY id="ambient" type="11" value="0.5 0.5 0.5 1"></PROPERTY>
     <PROPERTY id="configfile" type="7" value=""></PROPERTY>
     <PROPERTY id="fog::colour" type="11" value="0.5 0.5 0.5 1"></PROPERTY>
@@ -91,9 +91,9 @@
   <OBJECT object_id="2000000002" name="Viewport1" typename="Viewport Object">
     <PROPERTY id="camera::clipdistance" type="8" value="1 3000"></PROPERTY>
     <PROPERTY id="camera::fov" type="6" value="1"></PROPERTY>
-    <PROPERTY id="camera::orientation" type="13" value="-0.0795468 8.67278e-005 -0.996828 -0.00108759"></PROPERTY>
+    <PROPERTY id="camera::orientation" type="13" value="-0.9692 0.111499 0.218197 0.0251022"></PROPERTY>
     <PROPERTY id="camera::polymode" type="2" value="3"></PROPERTY>
-    <PROPERTY id="camera::position" type="9" value="0 10 0"></PROPERTY>
+    <PROPERTY id="camera::position" type="9" value="0 10 14.7823"></PROPERTY>
     <PROPERTY id="camera::viewmode" type="2" value="0"></PROPERTY>
     <PROPERTY id="colour" type="11" value="0 0 0 1"></PROPERTY>
     <PROPERTY id="compositorcount" type="2" value="0"></PROPERTY>
@@ -109,7 +109,7 @@
     </CUSTOMPROPERTIES>
   </OBJECT>
 
-  <OBJECT object_id="568742912" name="Paging Manager" typename="Paging Manager Object">
+  <OBJECT object_id="385235136" name="Paging Manager" typename="Paging Manager Object">
     <PROPERTY id="cellSize" type="6" value="256"></PROPERTY>
     <PROPERTY id="holdRadius" type="6" value="768"></PROPERTY>
     <PROPERTY id="layer" type="2" value="0"></PROPERTY>
@@ -123,7 +123,7 @@
     </CUSTOMPROPERTIES>
   </OBJECT>
 
-  <OBJECT object_id="153233440" name="Terrain Group" typename="Terrain Group Object" parentnode="SceneManager">
+  <OBJECT object_id="587908544" name="Terrain Group" typename="Terrain Group Object" parentnode="SceneManager">
     <PROPERTY id="blendmap::texturesize" type="2" value="1024"></PROPERTY>
     <PROPERTY id="colourmap::enabled" type="12" value="false"></PROPERTY>
     <PROPERTY id="colourmap::texturesize" type="2" value="128"></PROPERTY>
@@ -148,12 +148,12 @@
     </CUSTOMPROPERTIES>
   </OBJECT>
 
-  <OBJECT object_id="921384320" name="Page0x0" typename="Terrain Page Object" parentnode="Terrain Group">
+  <OBJECT object_id="303048800" name="Page0x0" typename="Terrain Page Object" parentnode="Terrain Group">
     <PROPERTY id="colourmap::enabled" type="12" value="false"></PROPERTY>
     <PROPERTY id="colourmap::texturesize" type="2" value="128"></PROPERTY>
     <PROPERTY id="layer" type="2" value="0"></PROPERTY>
-    <PROPERTY id="layer0::diffusespecular" type="7" value="city_5_diffusespecular.dds"></PROPERTY>
-    <PROPERTY id="layer0::normalheight" type="7" value="city_5_normalheight.dds"></PROPERTY>
+    <PROPERTY id="layer0::diffusespecular" type="7" value="city_0_diffusespecular.dds"></PROPERTY>
+    <PROPERTY id="layer0::normalheight" type="7" value="city_0_normalheight.dds"></PROPERTY>
     <PROPERTY id="layer0::worldsize" type="6" value="100"></PROPERTY>
     <PROPERTY id="layercount" type="2" value="1"></PROPERTY>
     <PROPERTY id="locked" type="12" value="false"></PROPERTY>

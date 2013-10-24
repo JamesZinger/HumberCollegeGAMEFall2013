@@ -20,6 +20,9 @@
 * the createFrameListener method.
 * @author R. N. Robson
 */
+
+using Ogre::Entity;
+using Ogre::SceneNode;
 class OgreApp:
 	public Ogre::WindowEventListener,
 	OIS::KeyListener, OIS::MouseListener

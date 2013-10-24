@@ -1,12 +1,12 @@
 // default00 genrated by blender2ogre 0.5.9
 
-material default00 
+material M16 
 {
     receive_shadows on 
 
     technique
     {
-        pass default00
+        pass M16
         {
             ambient 0.8784313797950745 0.8784313797950745 0.8784313797950745 1.0
             diffuse 0.7027451143077776 0.7027451143077776 0.7027451143077776 1.0

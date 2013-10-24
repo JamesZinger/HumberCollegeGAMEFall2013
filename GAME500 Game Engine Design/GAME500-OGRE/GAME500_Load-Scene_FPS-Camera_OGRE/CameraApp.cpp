@@ -13,19 +13,40 @@ void CameraApp::createScene()
 	/***************************************************************************/
 		sceneMgr->setAmbientLight( Ogre::ColourValue( 1, 1, 1 ) );
 		Ogre::Light *l = sceneMgr->createLight("MainLight");
+		
+		
+		mPlayerNode = sceneMgr->getRootSceneNode()->createChildSceneNode("PlayerNode");
+		mPlayerNode->setPosition(10.0, 15, 20.0);
+		mPlayerNode->lookAt(Ogre::Vector3(0,15,0),Node::TS_WORLD);
 
 		Ogre::Camera *camera = sceneMgr->createCamera("MainCam2");
-		camNode = sceneMgr->getRootSceneNode()->createChildSceneNode( "CameraNode" );
+		camNode = mPlayerNode->createChildSceneNode( "CameraNode" );
 		camNode->attachObject(camera);
-		camera->setPosition(10.0, 60.0, 10.0);
+		
+		camera->rotate(Ogre::Vector3(0,1,0),Degree(90));
+		camera->setPosition(0.0, 0.0, -1.0);
+		
+		//Load Model
+		Entity* gun = sceneMgr->createEntity("M16", "M16.mesh");
+		mGunNode = mPlayerNode->createChildSceneNode("GunNode");
+		mGunNode->attachObject(gun);
+		
+		mGunNode->translate(-13, -3, 2);
+		mGunNode->scale(0.3f,0.3f, 0.3f);
 
 		Ogre::Viewport *vp = window->addViewport(camera);
 		vp->setDimensions(0.0f, 0.0f, 1.0f, 1.0f);
 		camera->setAspectRatio((float)vp->getActualWidth() / (float) vp->getActualHeight());
 		camera->setFarClipDistance(1000.0f);
 		camera->setNearClipDistance(5.0f);
-		camera->lookAt(0,0,-10);
+		//camera->lookAt(0,0,-10);
 		setActiveCamera(camera);
+		
+		
+
+		
+		
+		//Load Scene
 		loader = new DotSceneLoader();
 		loader->parseDotScene(Ogre::String("zombiescene.scene"), 
 		Ogre::String("General"), 
@@ -34,10 +55,7 @@ void CameraApp::createScene()
 		// THis call is necessary to ensure the destructor for the DotSceneLoader
 		// does not delete the terrain group it created.  THis is a HACK!!
 		terrainGroup = loader->takeTerrainGroup();
-		Ogre::Vector3 *temp = new Ogre::Vector3(0,0,0);
-
-		camera->lookAt(*temp);
-
+		
 		/*Ogre::Plane plane(Ogre::Vector3::UNIT_Y, -10);
 		Ogre::MeshManager::getSingleton().createPlane("plane",
 			ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, plane,

@@ -4,10 +4,16 @@
 #include "OgreApp.h"
 #include "DotSceneLoader.h"
 #include "OGRE\Terrain\OgreTerrainGroup.h"
+using Ogre::SceneNode;
+
 class CameraApp: public OgreApp
 {
 private:
-	Ogre::SceneNode *camNode;
+	SceneNode *camNode;
+
+	SceneNode* mPlayerNode;
+	
+	SceneNode* mGunNode;
 
 	DotSceneLoader* loader;
 
@@ -29,6 +35,8 @@ public:
 	virtual void shutdownApp();
 
 	Ogre::SceneNode* getCamNode(){return camNode;}
+
+	SceneNode* getPlayerNode() {return mPlayerNode;}
 
 
 };

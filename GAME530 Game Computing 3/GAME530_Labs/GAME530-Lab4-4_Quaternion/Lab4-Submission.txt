@@ -1,0 +1,23 @@
+Name: James Zinger
+Lab 4 submissions
+
+Changes:
+
+void BaseFrameListener::processMouseInput(const FrameEvent &evt)
+{
+	float yawAngle = app->getMouse()->getMouseState().X.rel * evt.timeSinceLastFrame * -1;
+	float pitchAngle = app->getMouse()->getMouseState().Y.rel * evt.timeSinceLastFrame * -1;
+	
+	Ogre::Vector3 localXAxis = ((CameraApp*)app)->getActiveCamera()->getRight();
+	
+	Ogre::Vector3 qVY = Ogre::Vector3::UNIT_Y * sin(yawAngle/2);
+	Ogre::Vector3 qVX = localXAxis * sin(pitchAngle/2);
+
+	Quaternion q = Quaternion(cos(yawAngle/2), qVY.x, qVY.y, qVY.z);
+	q = q * Quaternion(cos(pitchAngle/2),qVX.x, qVX.y, qVX.z);
+
+	((CameraApp*)app)->getActiveCamera()->rotate(q);
+
+}
+
+this gets the appropriate axis for rotation for the typical camera behaviour

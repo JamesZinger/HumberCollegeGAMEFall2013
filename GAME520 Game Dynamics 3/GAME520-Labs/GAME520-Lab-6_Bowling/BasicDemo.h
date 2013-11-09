@@ -47,6 +47,8 @@ class BasicDemo : public PlatformDemoApplication
 
 	btConstraintSolver*	m_solver;
 
+	btAlignedObjectArray<class RagDoll*> m_ragdolls;
+
 	btRigidBody* m_sphere;
 
 	btDefaultCollisionConfiguration* m_collisionConfiguration;
@@ -63,6 +65,8 @@ class BasicDemo : public PlatformDemoApplication
 	void	initPhysics();
 
 	void	exitPhysics();
+
+	void	spawnRagdoll( const btVector3& startOffset );
 
 	virtual void clientMoveAndDisplay();
 

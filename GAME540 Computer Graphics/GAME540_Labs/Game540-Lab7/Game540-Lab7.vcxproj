@@ -14,6 +14,7 @@
     <ProjectGuid>{E7D2839A-C3C7-43F1-AFDD-51231BAF7D70}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Game540Lab7</RootNamespace>
+    <ProjectName>Game540-Lab7_Blending</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

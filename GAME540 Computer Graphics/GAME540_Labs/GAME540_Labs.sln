@@ -11,7 +11,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-Lab5_Lighting", "GA
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-Lab6_Textures", "GAME540-Lab6_Textures\GAME540-Lab6_Textures.vcxproj", "{751B025B-DA5C-45D6-BC25-94B8BA7165DA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game540-Lab7", "Game540-Lab7\Game540-Lab7.vcxproj", "{E7D2839A-C3C7-43F1-AFDD-51231BAF7D70}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game540-Lab7_Blending", "Game540-Lab7\Game540-Lab7.vcxproj", "{E7D2839A-C3C7-43F1-AFDD-51231BAF7D70}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-Lab8_Model-Loading", "GAME540-Lab8_Model-Loading\GAME540-Lab8_Model-Loading.vcxproj", "{4752A48B-D5D6-4C04-AEBD-0F01A07794AC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-StencilTest", "GAME540-StencilTest\GAME540-StencilTest.vcxproj", "{21CCE649-6398-4CBE-8733-40B9431677B0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-Lab-8_Tests", "GAME540-Lab-8_Tests\GAME540-Lab-8_Tests.vcxproj", "{E142A578-3156-4B2F-B598-B8CCB77D8DD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +49,18 @@ Global
 		{E7D2839A-C3C7-43F1-AFDD-51231BAF7D70}.Debug|Win32.Build.0 = Debug|Win32
 		{E7D2839A-C3C7-43F1-AFDD-51231BAF7D70}.Release|Win32.ActiveCfg = Release|Win32
 		{E7D2839A-C3C7-43F1-AFDD-51231BAF7D70}.Release|Win32.Build.0 = Release|Win32
+		{4752A48B-D5D6-4C04-AEBD-0F01A07794AC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4752A48B-D5D6-4C04-AEBD-0F01A07794AC}.Debug|Win32.Build.0 = Debug|Win32
+		{4752A48B-D5D6-4C04-AEBD-0F01A07794AC}.Release|Win32.ActiveCfg = Release|Win32
+		{4752A48B-D5D6-4C04-AEBD-0F01A07794AC}.Release|Win32.Build.0 = Release|Win32
+		{21CCE649-6398-4CBE-8733-40B9431677B0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{21CCE649-6398-4CBE-8733-40B9431677B0}.Debug|Win32.Build.0 = Debug|Win32
+		{21CCE649-6398-4CBE-8733-40B9431677B0}.Release|Win32.ActiveCfg = Release|Win32
+		{21CCE649-6398-4CBE-8733-40B9431677B0}.Release|Win32.Build.0 = Release|Win32
+		{E142A578-3156-4B2F-B598-B8CCB77D8DD3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E142A578-3156-4B2F-B598-B8CCB77D8DD3}.Debug|Win32.Build.0 = Debug|Win32
+		{E142A578-3156-4B2F-B598-B8CCB77D8DD3}.Release|Win32.ActiveCfg = Release|Win32
+		{E142A578-3156-4B2F-B598-B8CCB77D8DD3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

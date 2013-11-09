@@ -14,12 +14,15 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="common">
-      <UniqueIdentifier>{793890ca-708d-4d11-9a70-96cd2a934621}</UniqueIdentifier>
+      <UniqueIdentifier>{b751639b-a07e-48fd-bedf-b7ce2db4207a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\objloader.cpp">
+      <Filter>common</Filter>
     </ClCompile>
     <ClCompile Include="..\external\shader.cpp">
       <Filter>common</Filter>
@@ -27,15 +30,12 @@
     <ClCompile Include="..\external\texture.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="..\external\objloader.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\external\shader.hpp">
+    <ClInclude Include="..\external\objloader.hpp">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="..\external\objloader.hpp">
+    <ClInclude Include="..\external\shader.hpp">
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="..\external\texture.hpp">

@@ -14,7 +14,7 @@ subject to the following restrictions:
 */
 
 
-#define LENGTH_OF_CONE 10
+#define LENGTH_OF_CONE 40
 
 //maximum number of objects (and allow user to shoot additional boxes)
 #define MAX_PROXIES (ARRAY_SIZE_X*ARRAY_SIZE_Y*ARRAY_SIZE_Z + 1024)
@@ -48,8 +48,8 @@ void BasicDemo::clientMoveAndDisplay()
 	if (m_dynamicsWorld)
 	{
 		
-		m_cameraTargetPosition = m_sphere->getWorldTransform().getOrigin();
-		updateCamera();
+		//m_cameraTargetPosition = m_sphere->getWorldTransform().getOrigin();
+		//updateCamera();
 		m_dynamicsWorld->stepSimulation(ms / 1000000.f);
 		//optional but useful: debug drawing
 		m_dynamicsWorld->debugDrawWorld();
@@ -208,9 +208,9 @@ void	BasicDemo::initPhysics()
 		if (isDynamic)
 			shape->calculateLocalInertia(mass,localInertia);
 
-		const btVector3 origin = btVector3(0,1,0);
-		const float zdiff = 1.0f;
-		const float xdiff = 1.0f;
+		const btVector3 origin = btVector3(0,1,30);
+		const float zdiff = 1.5f;
+		const float xdiff = 1.5f;
 
 		for (int rowNumber = 0; rowNumber < LENGTH_OF_CONE; rowNumber++)
 		{
@@ -244,7 +244,7 @@ void	BasicDemo::initPhysics()
 		btTransform startTransform;
 		startTransform.setIdentity();
 
-		btScalar mass (10.0f);
+		btScalar mass (1.0f);
 
 		bool isDynamic = (mass != 0.0f);
 		
@@ -261,7 +261,7 @@ void	BasicDemo::initPhysics()
 		m_dynamicsWorld->addRigidBody(body);
 
 		btHingeConstraint* hinge = new btHingeConstraint(*body, btVector3(2,0,0), btVector3(0,1,0));
-		hinge->setLimit(btDegrees(-180),btDegrees(180));
+		hinge->setLimit(-3.14/2,3.14/2);
 		m_dynamicsWorld->addConstraint(hinge);
 	}
 }

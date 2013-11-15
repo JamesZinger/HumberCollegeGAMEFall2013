@@ -84,7 +84,7 @@ void reshape(int w, int h)
    glLoadIdentity();
 
    glClear(GL_STENCIL_BUFFER_BIT);
-   glStencilFunc (GL_ALWAYS, 0x1, 0x1);
+   glStencilFunc (GL_NEVER, 0x1, 0x1);
    glStencilOp (GL_REPLACE, GL_REPLACE, GL_REPLACE);
    glBegin(GL_QUADS);
       glVertex2f (-1.0, 0.0);

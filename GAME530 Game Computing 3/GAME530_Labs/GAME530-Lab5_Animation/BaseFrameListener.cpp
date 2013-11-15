@@ -13,13 +13,20 @@ bool BaseFrameListener::frameStarted(const FrameEvent &evt) {
 		sstream << "Sinbad" << i;
 		if( i == 0 )
 		{
-			scnmgr->getEntity(sstream.str())->getAnimationState("Dance")->addTime(evt.timeSinceLastFrame);
+			scnmgr->getEntity(sstream.str())->getAnimationState("RunTop")->addTime(evt.timeSinceLastFrame);
+			scnmgr->getEntity(sstream.str())->getAnimationState("RunBase")->addTime(evt.timeSinceLastFrame);
 		}
 		else 
 		{
 			scnmgr->getEntity(sstream.str())->getAnimationState("RunBase")->addTime(evt.timeSinceLastFrame);
 			scnmgr->getEntity(sstream.str())->getAnimationState("RunTop")->addTime(evt.timeSinceLastFrame);
 		}
+
+		sstream.clear();
+		sstream.str(std::string());
+		sstream << "Node" << i;
+
+
 	}
 	return true;
 }

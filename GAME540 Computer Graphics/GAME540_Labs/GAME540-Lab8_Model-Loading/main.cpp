@@ -123,6 +123,7 @@ int main ( void )
 	vector<vec2> tarusUVs;
 	loadOBJ("tarus.obj", tarusVerts, tarusUVs, tarusNorms);
 
+
 	GLuint vertexbuffer;
 	glGenBuffers(1, &vertexbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);

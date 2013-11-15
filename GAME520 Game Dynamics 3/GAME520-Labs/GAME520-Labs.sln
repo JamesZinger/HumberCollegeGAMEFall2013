@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME520-Lab-1_Move-Spheres-Bullet", "GAME520-Lab-1_Move-Spheres-Bullet\GAME520-Lab-1_Move-Spheres-Bullet.vcxproj", "{A8F7F1EB-095C-4401-A679-7660D190EC3F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{88E502AC-B702-4D38-86A2-AD697F39FC14} = {88E502AC-B702-4D38-86A2-AD697F39FC14}
@@ -19,6 +21,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME520-Midterm", "GAME520-Midterm\GAME520-Midterm.vcxproj", "{F9FF5A51-D933-4C4C-8E01-5FB51606A334}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME520-Lab-6_Bowling", "GAME520-Lab-6_Bowling\GAME520-Lab-6_Bowling.vcxproj", "{0801E4C7-7C1C-4B5B-8191-FB49A4593EDD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{88E502AC-B702-4D38-86A2-AD697F39FC14} = {88E502AC-B702-4D38-86A2-AD697F39FC14}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME520-Lab-7_Door-Hinge", "GAME520-Lab-7_Door-Hinge\GAME520-Lab-7_Door-Hinge.vcxproj", "{E437B03F-2632-4A91-929F-768D45BAD6D0}"
 EndProject

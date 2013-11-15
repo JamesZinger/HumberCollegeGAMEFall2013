@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-StencilTest", "GAME
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-Lab-8_Tests", "GAME540-Lab-8_Tests\GAME540-Lab-8_Tests.vcxproj", "{E142A578-3156-4B2F-B598-B8CCB77D8DD3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME540-Lab-9_Stencil-Test", "GAME540-Lab-9_Stencil-Test\GAME540-Lab-9_Stencil-Test.vcxproj", "{06DA8CC3-A7EC-4D39-8545-F542FEBEF86E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -61,6 +63,10 @@ Global
 		{E142A578-3156-4B2F-B598-B8CCB77D8DD3}.Debug|Win32.Build.0 = Debug|Win32
 		{E142A578-3156-4B2F-B598-B8CCB77D8DD3}.Release|Win32.ActiveCfg = Release|Win32
 		{E142A578-3156-4B2F-B598-B8CCB77D8DD3}.Release|Win32.Build.0 = Release|Win32
+		{06DA8CC3-A7EC-4D39-8545-F542FEBEF86E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{06DA8CC3-A7EC-4D39-8545-F542FEBEF86E}.Debug|Win32.Build.0 = Debug|Win32
+		{06DA8CC3-A7EC-4D39-8545-F542FEBEF86E}.Release|Win32.ActiveCfg = Release|Win32
+		{06DA8CC3-A7EC-4D39-8545-F542FEBEF86E}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

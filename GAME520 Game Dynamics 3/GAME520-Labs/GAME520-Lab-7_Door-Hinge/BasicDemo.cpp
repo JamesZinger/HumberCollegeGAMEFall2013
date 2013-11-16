@@ -14,7 +14,7 @@ subject to the following restrictions:
 */
 
 
-#define LENGTH_OF_CONE 40
+#define LENGTH_OF_CONE 10
 
 //maximum number of objects (and allow user to shoot additional boxes)
 #define MAX_PROXIES (ARRAY_SIZE_X*ARRAY_SIZE_Y*ARRAY_SIZE_Z + 1024)

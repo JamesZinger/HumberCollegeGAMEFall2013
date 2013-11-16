@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0801E4C7-7C1C-4B5B-8191-FB49A4593EDD}</ProjectGuid>
+    <ProjectGuid>{DC9ED41C-BBD2-4F5D-B67A-F7409166ABE3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>GAME520Lab6_Bowling</RootNamespace>
+    <RootNamespace>GAME520Labs10_CollisionCallback</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -49,10 +49,10 @@
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\BulletDebugDrawLib\include;$(BULLET_HOME)/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\BulletDebugDrawLib\include;$(BULLET_HOME)\src;$(BULLET_HOME)\Glut;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -70,7 +70,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -80,17 +80,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BasicDemo.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Win32BasicDemo.cpp" />
+    <ClCompile Include="VehicleDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BasicDemo.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BulletDebugDrawLib\BulletDebugDrawLib.vcxproj">
-      <Project>{88e502ac-b702-4d38-86a2-ad697f39fc14}</Project>
-    </ProjectReference>
+    <ClInclude Include="VehicleDemo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

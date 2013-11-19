@@ -52,14 +52,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\BulletDebugDrawLib\include;$(BULLET_HOME)\src;$(BULLET_HOME)\Glut;$(OGRE_HOME)\include;$(OGRE_HOME)\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(BULLET_HOME)\src;$(BULLET_HOME)\Glut;$(OGRE_HOME)\include;$(OGRE_HOME)\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(OGRE_HOME)\lib\Debug;$(OGRE_HOME)\boost\lib;$(OGRE_HOME)\Dependencies\lib;$(SolutionDir)\BulletDebugDrawLib\lib;$(BULLET_HOME)\Glut;$(BULLET_HOME)\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>BulletCollision_Debug.lib;BulletSoftBody_Debug.lib;BulletDynamics_Debug.lib;LinearMath_Debug.lib;OpenGLSupport_Debug.lib;BulletDebugDrawLib.lib;freeglut.lib;OgreMain_d.lib;OIS_d.lib;libboost_thread-vc100-mt-gd-1_49.lib;libboost_date_time-vc100-mt-gd-1_49.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OGRE_HOME)\lib\Debug;$(OGRE_HOME)\boost\lib;$(OGRE_HOME)\Dependencies\lib;$(BULLET_HOME)\Glut;$(BULLET_HOME)\lib\Debug;$(SolutionDir)\external\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>BulletCollision_v100_Debug.lib;BulletDynamics_v100_Debug.lib;LinearMath_v100_Debug.lib;freeglut.lib;OgreMain_d.lib;OIS_d.lib;libboost_thread-vc100-mt-gd-1_49.lib;libboost_date_time-vc100-mt-gd-1_49.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -80,6 +80,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaseFrameListener.cpp" />
+    <ClCompile Include="BtOgre.cpp" />
+    <ClCompile Include="CameraApp.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="OgreApp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseFrameListener.h" />
+    <ClInclude Include="BtOgreExtras.h" />
+    <ClInclude Include="BtOgreGP.h" />
+    <ClInclude Include="BtOgrePG.h" />
+    <ClInclude Include="CameraApp.h" />
+    <ClInclude Include="OgreApp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

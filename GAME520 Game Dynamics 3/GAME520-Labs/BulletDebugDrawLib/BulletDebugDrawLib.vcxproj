@@ -55,7 +55,7 @@
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)/external/lib;$(BULLET_HOME)\Glut;$(BULLET_HOME)\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>BulletCollision_Debug.lib;BulletDynamics_Debug.lib;LinearMath_Debug.lib;freeglut.lib;glut32.lib%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>BulletCollision_v110_Debug.lib;BulletDynamics_v110_Debug.lib;LinearMath_v110_Debug.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Lib>
   </ItemDefinitionGroup>

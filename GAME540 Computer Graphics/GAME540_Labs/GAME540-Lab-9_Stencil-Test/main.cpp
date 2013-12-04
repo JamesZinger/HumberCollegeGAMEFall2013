@@ -72,6 +72,7 @@ void DrawSphere(mat4 MVP, GLuint programID, GLuint MVPID, GLuint vertsBuffer, GL
 		glDisableVertexAttribArray(1);
 		glDisableVertexAttribArray(0);
 }
+
 void resize (int width, int height)
 {
 	glClear(GL_STENCIL_BUFFER_BIT);
@@ -127,7 +128,7 @@ int main ( void )
 	glfwEnable( GLFW_STICKY_KEYS );
 	//glfwSetMousePos(1024/2, 768/2);
 
-
+	
 	vector<vec3> sphereVerts;
 	vector<vec4> sphereColor;
 	

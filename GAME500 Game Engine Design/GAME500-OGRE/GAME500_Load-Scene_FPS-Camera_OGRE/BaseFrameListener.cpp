@@ -91,7 +91,7 @@ void BaseFrameListener::processKeyboardInput(const FrameEvent &evt)
 void BaseFrameListener::processMouseInput()
 {
 	OIS::Mouse* mouse = app->getMouse();
-
+	
 	int x = mouse->getMouseState().X.rel;
 	int y = mouse->getMouseState().Y.rel;
 	

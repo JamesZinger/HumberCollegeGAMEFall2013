@@ -1,6 +1,10 @@
 #include "CameraApp.h"
 #include "BaseFrameListener.h"
 #include <OGRE\OgreMath.h>
+
+/**
+ * Creates the scene.
+ */
 void CameraApp::createScene()
 {
 	sceneMgr->setAmbientLight( Ogre::ColourValue( 1, 1, 1 ) );
@@ -9,7 +13,7 @@ void CameraApp::createScene()
 
 	{
 		Camera *camera = sceneMgr->createCamera( "MainCam" );
-
+		
 		camNode = sceneMgr->getRootSceneNode()->createChildSceneNode( "CameraNode" );
 		camNode->attachObject( camera );
 		camNode->translate( Ogre::Vector3( 0, 100, 100 ) );
@@ -107,7 +111,7 @@ void CameraApp::createScene()
 		ninjaNode->setScale( Ogre::Vector3( 0.4f, 0.4f, 0.4f ) );
 
 		StaticMeshToShapeConverter converter( ninjaEnt );
-		btRigidBody* body = SetUpBtObject( converter.createConvex(), *ninjaNode, 2000 );
+		btRigidBody* body = SetUpBtObject( converter.createConvex(), *ninjaNode, 200 );
 
 		m_phyWorld->addRigidBody( body );
 	}
@@ -122,7 +126,7 @@ void CameraApp::createScene()
 		robotNode->setScale( Ogre::Vector3( 0.7f, 0.7f, 0.7f ) );
 
 		StaticMeshToShapeConverter converter( robotEnt );
-		btRigidBody* body = SetUpBtObject( converter.createConvex(), *robotNode, 1000 );
+		btRigidBody* body = SetUpBtObject( converter.createConvex(), *robotNode, 100 );
 
 		m_phyWorld->addRigidBody( body );
 	}

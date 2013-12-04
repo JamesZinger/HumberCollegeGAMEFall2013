@@ -50,7 +50,7 @@ void CameraApp::createScene()
 		m_characterNode = sceneMgr->getRootSceneNode()->createChildSceneNode( "Character Node" );
 
 		SceneNode* charEntNode = m_characterNode->createChildSceneNode( "ENT_CHARACTER" );
-		Entity* charEnt = sceneMgr->createEntity( "charENT", "ogrehead.mesh" );
+		Entity* charEnt = sceneMgr->createEntity( "charENT", "Sinbad.mesh" );
 		charEntNode->attachObject( charEnt );
 
 		StaticMeshToShapeConverter converter( charEnt );

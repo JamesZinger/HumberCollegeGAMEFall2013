@@ -40,6 +40,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(BULLET_HOME)\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -74,6 +75,7 @@
     <ClCompile Include="BtOgre.cpp" />
     <ClCompile Include="CameraApp.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyPhysics.cpp" />
     <ClCompile Include="OgreApp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +90,7 @@
     <ClInclude Include="BtOgreGP.h" />
     <ClInclude Include="BtOgrePG.h" />
     <ClInclude Include="CameraApp.h" />
+    <ClInclude Include="MyPhysics.h" />
     <ClInclude Include="OgreApp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -75,7 +75,6 @@
     <ClCompile Include="BtOgre.cpp" />
     <ClCompile Include="CameraApp.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyPhysics.cpp" />
     <ClCompile Include="OgreApp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -90,7 +89,6 @@
     <ClInclude Include="BtOgreGP.h" />
     <ClInclude Include="BtOgrePG.h" />
     <ClInclude Include="CameraApp.h" />
-    <ClInclude Include="MyPhysics.h" />
     <ClInclude Include="OgreApp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

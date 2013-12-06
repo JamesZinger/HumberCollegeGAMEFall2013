@@ -46,21 +46,9 @@ void CameraApp::createScene()
 		m_phyWorld->setGravity( btVector3( 0, -9.8, 0 ) );
 	}
 
-	{
-		m_characterNode = sceneMgr->getRootSceneNode()->createChildSceneNode( "Character Node" );
 
-		SceneNode* charEntNode = m_characterNode->createChildSceneNode( "ENT_CHARACTER" );
-		Entity* charEnt = sceneMgr->createEntity( "charENT", "Sinbad.mesh" );
-		charEntNode->attachObject( charEnt );
+	Character = new Sinbad( sceneMgr->getRootSceneNode(), "MainCharacter", "SinbadMesh", "SwordMesh", sceneMgr, m_phyWorld );
 
-		StaticMeshToShapeConverter converter( charEnt );
-
-		m_characterBody = SetUpBtObject( converter.createSphere(), *charEntNode, 50 );
-		m_characterBody->setActivationState( DISABLE_DEACTIVATION );
-
-		m_phyWorld->addRigidBody( m_characterBody );
-
-	}
 
 	{
 		Ogre::Vector3 position( 0, 0, 0 );
@@ -82,6 +70,30 @@ void CameraApp::createScene()
 		StaticMeshToShapeConverter converter2( planeEntity );
 
 		m_phyWorld->addRigidBody( new btRigidBody( 0, groundState, converter2.createTrimesh(), btVector3( 0, 0, 0 ) ) );
+
+	}
+
+	{
+		Ogre::Vector3 position( 50, 20, 50 );
+
+		Ogre::Plane plane( Ogre::Vector3::UNIT_Y, -10 );
+		Ogre::MeshManager::getSingleton().createPlane( "platform1", ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, plane, 20, 20, 10, 10, true, 1, 5, 5, Ogre::Vector3::UNIT_Z );
+		Ogre::Entity* planeEntity = sceneMgr->createEntity( "Platform", "platform1" );
+		Ogre::SceneNode* planeNode = sceneMgr->getRootSceneNode()->createChildSceneNode();
+
+		planeNode->translate( position );
+
+		planeNode->attachObject( planeEntity );
+		planeEntity->setMaterialName( "Examples/BeachStones" );
+		position = planeNode->getPosition( );
+
+		btVector3 bulletPos = Convert::toBullet( position );
+
+		btDefaultMotionState* groundState = new btDefaultMotionState( btTransform( btQuaternion( 0, 0, 0, 1 ), bulletPos ) );
+
+		StaticMeshToShapeConverter converter2( planeEntity );
+
+		m_phyWorld->addRigidBody( new btRigidBody( 0, groundState, converter2.createTrimesh( ), btVector3( 0, 0, 0 ) ) );
 
 	}
 

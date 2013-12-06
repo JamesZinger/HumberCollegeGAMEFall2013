@@ -5,6 +5,7 @@
 #include "BtOgreGP.h"
 #include "BtOgrePG.h"
 #include "BtOgreExtras.h"
+#include "Sinbad.h"
 
 using BtOgre::DebugDrawer;
 using BtOgre::StaticMeshToShapeConverter;
@@ -39,6 +40,8 @@ public:
 	{
 
 	}
+
+	Sinbad* Character;
 
 	virtual void createScene();
 

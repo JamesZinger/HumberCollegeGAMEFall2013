@@ -111,10 +111,23 @@ void BaseFrameListener::processKeyboardInput( const FrameEvent &evt )
 		impulse.setX( impulse.getX() - force );
 	}
 
+	if ( app->getKeyboard()->isKeyDown( OIS::KC_SPACE ) )
+	{
+		isAddingForce = true;
+		impulse.setY( impulse.getY() + force );
+	}
+
 	if ( isAddingForce )
 	{
-		( (CameraApp*)app )->getCharBody()->applyCentralImpulse( impulse );
+		( (CameraApp*)app )->Character->body->applyCentralImpulse( impulse );
 	}
+
+	else
+	{
+		btVector3 velocity = ( (CameraApp*)app )->Character->body->getLinearVelocity();
+		( (CameraApp*)app )->Character->body->setLinearVelocity( btVector3( 0, velocity.getY(), 0 ) );
+	}
+
 }
 
 }

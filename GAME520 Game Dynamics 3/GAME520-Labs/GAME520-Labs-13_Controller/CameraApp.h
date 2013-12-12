@@ -32,6 +32,8 @@ private:
 	btDynamicsWorld* m_phyWorld;
 	DebugDrawer* m_dbgDraw;
 
+	btRigidBody* m_ground;
+
 	btRigidBody* SetUpBtObject( btCollisionShape* shape, SceneNode& scnNode, float mass );
 
 public:
@@ -51,7 +53,7 @@ public:
 
 	virtual void shutdownApp();
 
-	Ogre::SceneNode* getCamNode() { return camNode; }
+	SceneNode* getCamNode() { return camNode; }
 
 	btRigidBody* getCharBody( void ) { return m_characterBody; }
 
@@ -61,7 +63,7 @@ public:
 
 	SceneNode* getCharacterNode( void ) { return m_characterNode; }
 
-
+	btRigidBody* getGroundBody( void ) { return m_ground; }
 };
 
 #endif

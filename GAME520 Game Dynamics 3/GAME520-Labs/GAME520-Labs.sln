@@ -41,6 +41,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME520-Quiz-2", "GAME520-Q
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME520-Labs-13_Controller", "GAME520-Labs-13_Controller\GAME520-Labs-13_Controller.vcxproj", "{0FD0CE64-5045-441A-B434-7931AA66539F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME520-Final", "GAME520-Final\GAME520-Final.vcxproj", "{9C6F748C-FFD6-4DFF-BD7A-5474074C9A07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -211,6 +213,16 @@ Global
 		{0FD0CE64-5045-441A-B434-7931AA66539F}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{0FD0CE64-5045-441A-B434-7931AA66539F}.Release|Win32.ActiveCfg = Release|Win32
 		{0FD0CE64-5045-441A-B434-7931AA66539F}.Release|Win32.Build.0 = Release|Win32
+		{9C6F748C-FFD6-4DFF-BD7A-5474074C9A07}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{9C6F748C-FFD6-4DFF-BD7A-5474074C9A07}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{9C6F748C-FFD6-4DFF-BD7A-5474074C9A07}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{9C6F748C-FFD6-4DFF-BD7A-5474074C9A07}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9C6F748C-FFD6-4DFF-BD7A-5474074C9A07}.Debug|Win32.Build.0 = Debug|Win32
+		{9C6F748C-FFD6-4DFF-BD7A-5474074C9A07}.Release|Any CPU.ActiveCfg = Release|Win32
+		{9C6F748C-FFD6-4DFF-BD7A-5474074C9A07}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{9C6F748C-FFD6-4DFF-BD7A-5474074C9A07}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{9C6F748C-FFD6-4DFF-BD7A-5474074C9A07}.Release|Win32.ActiveCfg = Release|Win32
+		{9C6F748C-FFD6-4DFF-BD7A-5474074C9A07}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

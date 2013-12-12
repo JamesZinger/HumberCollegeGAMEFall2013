@@ -14,7 +14,13 @@ bool BaseFrameListener::frameStarted( const FrameEvent &evt )
 
 bool BaseFrameListener::frameEnded( const FrameEvent &evt )
 {
-
+	if ( ( (CameraApp*)app )->Character->isJumping )
+	{
+		if ( ( (CameraApp*)app )->Character->body->checkCollideWith( ( (CameraApp*)app )->getGroundBody( ) ) && ( (CameraApp*)app )->Character->body->getLinearVelocity().getY() < 0 )
+		{
+			( (CameraApp*)app )->Character->isJumping = false;
+		}
+	}
 	// grab the keyboard & mouse state
 	app->getKeyboard()->capture();
 	app->getMouse()->capture();
@@ -26,6 +32,10 @@ bool BaseFrameListener::frameEnded( const FrameEvent &evt )
 	{
 		//OGRE_APP.shutdown();
 	}
+
+	( (CameraApp*)app )->Character->ContinueAnimation( evt.timeSinceLastFrame );
+
+	
 
 	return keepRendering;
 }
@@ -88,7 +98,8 @@ void BaseFrameListener::processKeyboardInput( const FrameEvent &evt )
 	{
 	btVector3 impulse = btVector3( 0, 0, 0 );
 	bool isAddingForce = false;
-	float force = 30.0;
+	float force = 3.0;
+
 	if ( app->getKeyboard()->isKeyDown( OIS::KC_UP ) )
 	{
 		isAddingForce = true;
@@ -111,21 +122,31 @@ void BaseFrameListener::processKeyboardInput( const FrameEvent &evt )
 		impulse.setX( impulse.getX() - force );
 	}
 
-	if ( app->getKeyboard()->isKeyDown( OIS::KC_SPACE ) )
+	if ( app->getKeyboard( )->isKeyDown( OIS::KC_SPACE ) && !( (CameraApp*)app )->Character->isJumping )
 	{
 		isAddingForce = true;
 		impulse.setY( impulse.getY() + force );
+		( (CameraApp*)app )->Character->isJumping = true;
 	}
 
 	if ( isAddingForce )
 	{
-		( (CameraApp*)app )->Character->body->applyCentralImpulse( impulse );
+		( (CameraApp*)app )->Character->body->applyCentralImpulse( ( (CameraApp*)app )->Character->getMass() * impulse );
+
+		( (CameraApp*)app )->Character->movingForward = impulse.getZ() < 0;
+
+		if ( impulse.getX( ) != 0 && !( (CameraApp*)app )->Character->isJumping )
+		{
+			( (CameraApp*)app )->Character->SwitchAnimation( Sinbad::SinbadAnimationState::Moving );
+		}
 	}
 
 	else
 	{
 		btVector3 velocity = ( (CameraApp*)app )->Character->body->getLinearVelocity();
 		( (CameraApp*)app )->Character->body->setLinearVelocity( btVector3( 0, velocity.getY(), 0 ) );
+
+		( (CameraApp*)app )->Character->SwitchAnimation( Sinbad::SinbadAnimationState::Idle );
 	}
 
 }

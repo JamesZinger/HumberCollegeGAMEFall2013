@@ -80,7 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ogre.cfg" />
-    <None Include="Ogre.log" />
     <None Include="plugins.cfg" />
     <None Include="resources.cfg" />
   </ItemGroup>

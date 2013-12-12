@@ -47,7 +47,7 @@ void CameraApp::createScene()
 	}
 
 
-	Character = new Sinbad( sceneMgr->getRootSceneNode(), "MainCharacter", "SinbadMesh", "SwordMesh", sceneMgr, m_phyWorld );
+	Character = new Sinbad( sceneMgr->getRootSceneNode(), "MainCharacter", "SinbadMesh", "SwordMesh", 100, sceneMgr, m_phyWorld );
 
 
 	{
@@ -69,7 +69,9 @@ void CameraApp::createScene()
 
 		StaticMeshToShapeConverter converter2( planeEntity );
 
-		m_phyWorld->addRigidBody( new btRigidBody( 0, groundState, converter2.createTrimesh(), btVector3( 0, 0, 0 ) ) );
+		btRigidBody* body = new btRigidBody( 0, groundState, converter2.createTrimesh(), btVector3( 0, 0, 0 ) );
+
+		m_phyWorld->addRigidBody( body );
 
 	}
 
